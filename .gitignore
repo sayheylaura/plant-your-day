@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+
+# Editor directories and files
+.vscode/*
+.cursor/*
+.idea/*
+
+# Environment
+.env
+
+# Python files
+__pycache__/
+.venv/
