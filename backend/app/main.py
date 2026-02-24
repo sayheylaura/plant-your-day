@@ -17,6 +17,7 @@ class PlantCreate(SQLModel):
     species: str
     notes: str | None = None
 
+
 database_url = os.getenv("DATABASE_URL")
 
 engine = create_engine(database_url, echo=True)
@@ -57,7 +58,8 @@ def get_plant_by_id(plant_id: int, session: Session = Depends(get_session)):
 
 @app.post("/plants", response_model=Plant, status_code=201, tags=["plants"])
 def create_plant(plant: PlantCreate, session: Session = Depends(get_session)):
-    new_plant = Plant(name=plant.name, species=plant.species, notes=plant.notes)
+    new_plant = Plant(name=plant.name, species=plant.species,
+                      notes=plant.notes)
     session.add(new_plant)
     session.commit()
     session.refresh(new_plant)
