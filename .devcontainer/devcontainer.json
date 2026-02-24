@@ -3,7 +3,9 @@
   "dockerComposeFile": "../docker-compose.yml",
   "service": "dev",
   "workspaceFolder": "/code",
-  "postCreateCommand": "cd backend && uv venv && uv pip install -r requirements.txt",
+  "shutdownAction": "stopCompose",
+  "initializeCommand": "test -f .env || cp .env.example .env",
+  "postCreateCommand": "cd backend && (test -d .venv || uv venv) && uv pip install --python .venv/bin/python -r requirements.txt && cd ../frontend && pnpm install",
   "customizations": {
     "vscode": {
       "extensions": [

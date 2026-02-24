@@ -12,6 +12,7 @@ services:
     command: sleep infinity
     ports:
       - "8000:8000"
+      - "5173:5173"
     depends_on:
       - db
 
@@ -19,9 +20,9 @@ services:
     image: postgres:16
     container_name: plant-your-day-db
     environment:
-      POSTGRES_USER: ${DATABASE_USER}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER:-postgres}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-postgres}
+      POSTGRES_DB: ${DATABASE_NAME:-plantyourday}
     ports:
       - "5432:5432"
     volumes:
