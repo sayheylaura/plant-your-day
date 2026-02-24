@@ -65,7 +65,7 @@ To get the FastAPI server up and running, run these commands in your editor's in
 
    You should now be able to access the API at `http://localhost:8000`, and the Swagger UI at `http://localhost:8000/docs`.
 
-4. Seed the database (first time only):
+4. Seed the database (first time only. Make sure the Python virtual environment is activated):
 
    ```bash
    python seed_db.py
