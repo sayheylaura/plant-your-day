@@ -1,6 +1,5 @@
 @layer base {
   body {
-    min-height: 100vh;
     font-family:
       Inter,
       -apple-system,
@@ -20,7 +19,14 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  #app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   main {
+    flex: 1;
     padding: 0 2.5rem 0;
   }
 }

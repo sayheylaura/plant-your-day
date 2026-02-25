@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="py-6 px-10 flex justify-between items-center">
+  <header class="py-6 px-10 flex justify-between items-center shrink-0">
     <h1 class="text-2xl font-bold mb-4 lg:text-4xl">
       <RouterLink to="/">Plant Your Day 🪴</RouterLink>
     </h1>
