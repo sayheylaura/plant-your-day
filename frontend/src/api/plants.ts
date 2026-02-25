@@ -27,3 +27,19 @@ export async function getPlants(): Promise<Plant[]> {
   const data = await response.json()
   return data
 }
+
+export async function getPlantById(id: string): Promise<Plant> {
+  checkApiBaseUrl()
+
+  const url = `${API_BASE_URL}/plants/${id}`
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    const status = response.status
+    const statusText = response.statusText || `HTTP ${status}`
+    throw new ApiError(`Failed to fetch plant by ID ${id}: ${statusText}`, status)
+  }
+
+  const data = await response.json()
+  return data
+}
